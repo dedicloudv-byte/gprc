@@ -1,5 +1,5 @@
 name = "grpc"
-main = "scr/grpc-worker.js"
+main = "src/grpc-worker.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
