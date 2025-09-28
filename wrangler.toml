@@ -1,4 +1,4 @@
-name = "nautica-grpc"
+name = "grpc"
 main = "src/grpc-worker.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
@@ -26,9 +26,9 @@ vars = { ENVIRONMENT = "production" }
 [[kv_namespaces]]
 binding = "PROXY_CONFIG"
 id = "your-kv-namespace-id"
-preview_id = "your-preview-kv-namespace-id"
+preview_id = ""
 
 # Secrets
 [secrets]
 PRX_BANK_URL = "https://raw.githubusercontent.com/FoolVPN-ID/Nautica/refs/heads/main/proxyList.txt"
-REVERSE_PRX_TARGET = "example.com"
+REVERSE_PRX_TARGET = "ovo.id"
