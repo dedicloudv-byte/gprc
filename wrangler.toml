@@ -1,5 +1,5 @@
 name = "grpc"
-main = "grpc-worker.js"
+main = "scr/grpc-worker.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
@@ -25,8 +25,8 @@ vars = { ENVIRONMENT = "production" }
 # KV Namespaces
 [[kv_namespaces]]
 binding = "PROXY_CONFIG"
-id = "your-kv-namespace-id"
-preview_id = ""
+id = "PROXY_CONFIG"
+preview_id = "faadf2de2a6e4416a1da36f5f78cf2c3"
 
 # Secrets
 [secrets]
