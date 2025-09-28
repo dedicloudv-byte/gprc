@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package nautica;
+
+service NauticaProxy {
+  // Stream untuk TCP connection
+  rpc CreateTCPStream(stream ProxyData) returns (stream ProxyData);
+  
+  // Stream untuk UDP connection  
+  rpc CreateUDPStream(stream ProxyData) returns (stream ProxyData);
+  
+  // Health check
+  rpc HealthCheck(HealthRequest) returns (HealthResponse);
+  
+  // Mendapatkan konfigurasi proxy
+  rpc GetProxyConfig(ProxyConfigRequest) returns (ProxyConfigResponse);
+}
+
+message ProxyData {
+  bytes data = 1;
+  string target_address = 2;
+  uint32 target_port = 3;
+  string protocol = 4; // trojan, vmess, shadowsocks
+  string connection_id = 5;
+}
+
+message HealthRequest {
+  string target_address = 1;
+  uint32 target_port = 2;
+}
+
+message HealthResponse {
+  bool healthy = 1;
+  uint32 latency_ms = 2;
+  string message = 3;
+}
+
+message ProxyConfigRequest {
+  string country_filter = 1;
+  uint32 limit = 2;
+  string format = 3;
+}
+
+message ProxyConfigResponse {
+  repeated ProxyConfig configs = 1;
+}
+
+message ProxyConfig {
+  string address = 1;
+  uint32 port = 2;
+  string country = 3;
+  string organization = 4;
+  string protocol = 5;
+}

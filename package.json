@@ -1,0 +1,32 @@
+{
+  "name": "nautica-grpc",
+  "version": "1.0.0",
+  "description": "Nautica proxy with gRPC wrapper for Cloudflare Workers",
+  "main": "src/grpc-worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "wrangler deploy --dry-run",
+    "test": "node test/test-client.js",
+    "format": "prettier --write src/**/*.js",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [
+    "proxy",
+    "grpc",
+    "cloudflare-workers",
+    "vpn",
+    "trojan",
+    "vmess",
+    "shadowsocks"
+  ],
+  "author": "Nautica Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "wrangler": "^3.22.1",
+    "prettier": "^3.1.1",
+    "eslint": "^8.56.0"
+  },
+  "dependencies": {}
+}
